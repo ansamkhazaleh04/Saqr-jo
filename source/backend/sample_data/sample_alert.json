@@ -1,0 +1,84 @@
+{
+  "agent": {
+    "ip": "123.123.123.8",
+    "name": "win10",
+    "id": "002"
+  },
+  "manager": {
+    "name": "ansam"
+  },
+  "data": {
+    "win": {
+      "eventdata": {
+        "subjectLogonId": "0x3e7",
+        "subjectDomainName": "WORKGROUP",
+        "ipAddress": "127.0.0.1",
+        "authenticationPackageName": "Negotiate",
+        "workstationName": "DESKTOP-5DPF3B8",
+        "subStatus": "0xc000006a",
+        "logonProcessName": "User32",
+        "targetUserName": "win",
+        "keyLength": "0",
+        "subjectUserSid": "S-1-5-18",
+        "processId": "0x3d8",
+        "processName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+        "ipPort": "0",
+        "failureReason": "%%2313",
+        "targetDomainName": "DESKTOP-5DPF3B8",
+        "targetUserSid": "S-1-0-0",
+        "logonType": "2",
+        "subjectUserName": "DESKTOP-5DPF3B8$",
+        "status": "0xc000006d"
+      },
+      "system": {
+        "eventId": "4625",
+        "keywords": "0x8010000000000000",
+        "channel": "Security",
+        "opcode": "0",
+        "message": "\"An account failed to log on.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tDESKTOP-5DPF3B8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nLogon Type:\\t\\t2\\r\\n\\r\\nAccount For Which Logon Failed:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\twin\\r\\n\\tAccount Domain:\\t\\tDESKTOP-5DPF3B8\\r\\n\\r\\nFailure Information:\\r\\n\\tFailure Reason:\\t\\tUnknown user name or bad password.\\r\\n\\tStatus:\\t\\t0xC000006D\\r\\n\\tSub Status:\\t\\t0xC000006A\\r\\n\\r\\nProcess Information:\\r\\n\\tCaller Process ID:\\t0x3d8\\r\\n\\tCaller Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\nNetwork Information:\\r\\n\\tWorkstation Name:\\tDESKTOP-5DPF3B8\\r\\n\\tSource Network Address:\\t127.0.0.1\\r\\n\\tSource Port:\\t\\t0\\r\\n\\r\\nDetailed Authentication Information:\\r\\n\\tLogon Process:\\t\\tUser32\\r\\n\\tAuthentication Package:\\tNegotiate\\r\\n\\tTransited Services:\\t-\\r\\n\\tPackage Name (NTLM only):\\t-\\r\\n\\tKey Length:\\t\\t0\\r\\n\\r\\nThis event is generated when a logon request fails.\"",
+        "version": "0",
+        "systemTime": "2026-07-01T17:24:05.6530773Z",
+        "eventRecordID": "10035",
+        "threadID": "656",
+        "computer": "DESKTOP-5DPF3B8",
+        "task": "12544",
+        "processID": "608",
+        "severityValue": "AUDIT_FAILURE",
+        "providerName": "Microsoft-Windows-Security-Auditing"
+      }
+    }
+  },
+  "rule": {
+    "firedtimes": 5,
+    "mail": false,
+    "level": 10,
+    "description": "Multiple Windows Failed Logon Attempts Detected ",
+    "groups": [
+      "custom_rule"
+    ],
+    "mitre": {
+      "technique": [
+        "Brute Force"
+      ],
+      "id": [
+        "T1110"
+      ],
+      "tactic": [
+        "Credential Access"
+      ]
+    },
+    "id": "100101"
+  },
+    "decoder": {
+    "name": "windows_eventchannel"
+  },
+  "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4625\",\"version\":\"0\",\"level\":\"0\",\"task\":\"12544\",\"opcode\":\"0\",\"keywords\":\"0x8010000000000000\",\"systemTime\":\"2026-07-01T17:24:05.6530773Z\",\"eventRecordID\":\"10035\",\"processID\":\"608\",\"threadID\":\"656\",\"channel\":\"Security\",\"computer\":\"DESKTOP-5DPF3B8\",\"severityValue\":\"AUDIT_FAILURE\",\"message\":\"An account failed to log on.\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"DESKTOP-5DPF3B8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"targetUserSid\":\"S-1-0-0\",\"targetUserName\":\"win\",\"targetDomainName\":\"DESKTOP-5DPF3B8\",\"logonType\":\"2\",\"logonProcessName\":\"User32\",\"authenticationPackageName\":\"Negotiate\",\"workstationName\":\"DESKTOP-5DPF3B8\",\"status\":\"0xc000006d\",\"subStatus\":\"0xc000006a\",\"failureReason\":\"%%2313\",\"keyLength\":\"0\",\"processId\":\"0x3d8\",\"processName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"ipAddress\":\"127.0.0.1\",\"ipPort\":\"0\"}}}",
+  "input": {
+    "type": "log"
+  },
+  "@timestamp": "2026-07-01T17:23:23.169Z",
+  "location": "EventChannel",
+  "id": "1782926603.43534",
+  "timestamp": "2026-07-01T20:23:23.169+0300",
+  "_id": "FRa7Hp8Bt4MGu3CRKzbm"
+}

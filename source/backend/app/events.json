@@ -1,0 +1,20 @@
+[
+  {
+    "event_id": "1",
+    "image": "C:\\Windows\\System32\\cmd.exe",
+    "command_line": "cmd.exe /c whoami",
+    "user": "test"
+  },
+  {
+    "event_id": "1",
+    "image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "command_line": "powershell.exe -enc SGVsbG8=",
+    "user": "test"
+  },
+  {
+    "event_id": "1",
+    "image": "C:\\Users\\Ansam\\AppData\\Roaming\\evil.exe",
+    "command_line": "evil.exe",
+    "user": "test"
+  }
+]
